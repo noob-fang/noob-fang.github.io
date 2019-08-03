@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>dirst_leetcode刷题&amp;ElasticSearch配置IK - Hexo</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="TheDataMan&#39;s Blog,"> 
+    <meta name="description" content="Leetcode0001 两数之和  题目描述：给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
+
+方法1：两次循环，最简,"> 
+    <meta name="author" content="noob-fang"> 
+    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <link rel="icon" href="/img/fang.jpg"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">Hexo</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="https://github.com/noob-fang/noob-fang.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">dirst_leetcode刷题&ElasticSearch配置IK</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">dirst_leetcode刷题&ElasticSearch配置IK</h1>
+        <div class="stuff">
+            <span>八月 03, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/leetcode-ElasticSearch/">leetcode ElasticSearch</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="Leetcode0001-两数之和"><a href="#Leetcode0001-两数之和" class="headerlink" title="Leetcode0001 两数之和"></a>Leetcode0001 两数之和</h1><p>  <strong>题目描述</strong>：给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<ul>
+<li><strong>方法1</strong>：两次循环，最简单，效率也最低<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">size = len(nums)</span><br><span class="line"><span class="keyword">for</span> i,m <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">    j = i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> j&lt;size:</span><br><span class="line">        <span class="keyword">if</span> target == (m+nums[j]):</span><br><span class="line">            <span class="keyword">return</span> [i,j]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            j+=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>enumerate函数的使用：enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，<em>同时列出数据和数据下标</em><br>四个数字的默认测试集得到的实际 runtime: 40 ms  预计是：20 ms</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#或者用for</span></span><br><span class="line">nums_length = len(nums)</span><br><span class="line"><span class="keyword">for</span> one_num <span class="keyword">in</span> range(nums_length<span class="number">-1</span>):</span><br><span class="line">    <span class="keyword">for</span> second_num <span class="keyword">in</span> range(one_num+<span class="number">1</span>, nums_length):</span><br><span class="line">        <span class="keyword">if</span> nums[one_num] + nums[second_num] == target:</span><br><span class="line">            <span class="keyword">return</span> [one_num, second_num]</span><br></pre></td></tr></table></figure>
+
+<p>python for循环的若干总结：<br>1、for循环可以遍历任何序列的项目，如一个列表或者一个字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> iterating_var <span class="keyword">in</span> sequence:</span><br><span class="line">    statements(s)</span><br></pre></td></tr></table></figure>
+
+<p>2、执行循环的遍历方式是通过索引</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> iterating_var <span class="keyword">in</span> range(len(...)):<span class="comment">#从0开始</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> iterating_var <span class="keyword">in</span> range(<span class="number">10</span>,<span class="number">20</span>) <span class="comment">#前闭后开</span></span><br></pre></td></tr></table></figure>
+
+<p>结果：超出时间限制</p>
+<ul>
+<li><strong>方法2</strong>：字典模拟Hash</li>
+</ul>
+<p>此方法在方法一的基础上改进了，只需要一层循环即可找出答案。即根据当前遍历得到的元素index，查找target-index是否在剩余数组里出现，如果找得到，则返回其下标值；反之则说明没有该答案。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">_dict = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> i, m <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">    _dict[m] = i</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, m <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">    j = _dict.get(target - m)</span><br><span class="line">    <span class="keyword">if</span> j <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span> <span class="keyword">and</span> i != j:</span><br><span class="line">        <span class="keyword">return</span> [i, j]</span><br></pre></td></tr></table></figure>
+
+<p>结果：√ Accepted<br>  √ 29/29 cases passed (72 ms)<br>  √ Your runtime beats 59.38 % of python3 submissions<br>  √ Your memory usage beats 5.05 % of python3 submissions (15.3 MB)</p>
+<ul>
+<li><strong>方法3</strong>：一遍字典模拟Hash<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_dict = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> i, m <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">    <span class="keyword">if</span> _dict.get(target - m) <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> [i, _dict.get(target - m)]</span><br><span class="line">    _dict[m] = i</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>结果：√ Accepted<br>  √ 29/29 cases passed (80 ms)<br>  √ Your runtime beats 53.25 % of python3 submissions<br>  √ Your memory usage beats 5.05 % of python3 submissions (15.1 MB)</p>
+<p>  <strong>收获</strong><br>第一次总显得那么手忙脚乱，各种bug，但是还是完成了，希望随着题目的深入，变得更从容一些吧，效率也要高一点哟~<br>一开始对整个函数名一脸懵<br><code>def twoSum(self, nums: List[int], target: int) -&gt; List[int]:</code><br>想喊什么鬼，其实就是类型定义和返回值而已，自己太少见多怪了~<br>哈希值（dict,java中的map等）<strong>具体实现</strong>有时间还要查一下怎么实现的…</p>
+<h1 id="ElasticSearch配置"><a href="#ElasticSearch配置" class="headerlink" title="ElasticSearch配置"></a>ElasticSearch配置</h1><p>最近在给大boss做个查询系统，都是基于文本的，所以选择了ElasticSearch作为存储和搜索。Win10上的配置和基本使用有时间会整理一下，这里记录一下今天处理的小问题：安装analysis-ik插件。ES的更新很快，版本与版本之间的差距也很大，所以这里以相对较新的7.2版本为例：</p>
+<h2 id="下载analysis-ik源文件"><a href="#下载analysis-ik源文件" class="headerlink" title="下载analysis-ik源文件"></a>下载analysis-ik源文件</h2><p><a href="https://github.com/medcl/elasticsearch-analysis-ik/tree/v7.2.0">github上下载对应版本的源文件（具体版本可参照readme）</a></p>
+<h2 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h2><p>下载完成之后进入下载目录，解压缩，<br><strong>修改pom.xml，以ES7.2为例，将ES版本改成7.2.0</strong><br>默认好像是7.0.0，如果不改，ES将会启动不了，Kibana也用不了，一直显示disconnect error<br>cd到具体文件夹内<br><code>mvn clean package</code><br>等待完成后，BUILD SUCCESS</p>
+<h2 id="复制与重启"><a href="#复制与重启" class="headerlink" title="复制与重启"></a>复制与重启</h2><p>将target–&gt;releases中的压缩包复制到ES目录的plugins中新建的analysis-ik文件夹下，解压缩</p>
+<p>进入win10服务，找到ES，右键重新启动</p>
+<p>多刷新几次，看到正在运行没退出的话，才算成功</p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>在mapping中配置analyser，粒度可选，具体可参考readme文件，后期也会整理具体使用方法</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Leetcode0001-两数之和"><span class="toc-number">1.</span> <span class="toc-text">Leetcode0001 两数之和</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ElasticSearch配置"><span class="toc-number">2.</span> <span class="toc-text">ElasticSearch配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载analysis-ik源文件"><span class="toc-number">2.1.</span> <span class="toc-text">下载analysis-ik源文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打包"><span class="toc-number">2.2.</span> <span class="toc-text">打包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#复制与重启"><span class="toc-number">2.3.</span> <span class="toc-text">复制与重启</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">2.4.</span> <span class="toc-text">使用</span></a></li></ol></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
